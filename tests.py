@@ -1,10 +1,3 @@
-# objsnapshot
-Create snapshots of python objects and restore them later in time.
-
-
-## Example
-
-```python
 from .objsnapshot import  commit, rollback
 
 
@@ -89,5 +82,3 @@ def test_commit_state():
 
     assert mb.x == 0
     assert mb.y == 0
-
-```
