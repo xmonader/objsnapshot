@@ -39,7 +39,8 @@ def commit(obj):
         return Commit(deepcopy(obj.__dict__))
     elif hasattr(obj, "__slots__"):
         return Commit(state={x:getattr(obj, x) for x in obj.__slots__}, uses_slots=True)
-
+    else:
+        raise ValueError("obj {} doesn't have `__dict__` or `__slots__` attributes to commit.")
 
 def rollback(obj, commit):
     """
