@@ -39,8 +39,7 @@ class MovingBall:
 
     __str__ = lambda self: "{} {}".format(self.x, self.y)
 
-h = Human("Ahmed", 50)
-mb = MovingBall(0, 0)
+
 ### Examples
 def test_commit_state():
     h = Human("Ahmed", 50)
