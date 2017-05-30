@@ -1,4 +1,5 @@
 from copy import deepcopy
+from datetime import datetime
 
 
 class Commit(object):
@@ -8,13 +9,17 @@ class Commit(object):
     """
     def __init__(self, state, uses_slots=False):
         """
-        @param state dict: object state. 
-        @param uses_slots bool = False: indicator of the usage of slots attribute. 
+        @param state dict: object state.
+        @param uses_slots bool = False: indicator of the usage of slots attribute.
 
         """
+        self._ctime = datetime.now()
         self._state = state
         self._uses_slots = uses_slots
 
+    @property
+    def creation_time(self):
+        return self._ctime
 
     @property
     def uses_slots(self):
@@ -29,7 +34,7 @@ class Commit(object):
 
 def commit(obj):
     """
-    Commit object state. 
+    Commit object state.
 
     @param obj object: python object.
 
